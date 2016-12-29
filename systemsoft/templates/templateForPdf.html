@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>No Dues Receipt  </title>
+</head>
+<body>
+
+<table border="1" width="100%" align="center">
+
+    <tr>
+
+    <td>
+    Name = {{ dict.student.name }}
+    </td>
+<td>
+   Department = {{ dict.student.dept }}
+
+</td>
+    <td>
+    Roll number = {{ dict.student.rollNo }}
+</td>
+    </tr>
+</table>
+<table border="2" width="70%" align="center">
+    <tr>
+        <th>Name</th>
+        <th>Status</th>
+    </tr>
+
+    {% for key,value in dict.items %}
+
+        {%  ifnotequal key  "student" %}
+            <tr>
+                <td>        {{ value.name }}
+                </td>
+            <td>
+                "No Dues"
+            </td>
+
+            </tr>
+
+    {% endifnotequal %}
+
+    {% endfor %}
+</table>
+
+
+<form>
+         <input type="button" value="Print" onclick="window.print()" />
+      </form>
+</body>
+
+</body>
+</html>
